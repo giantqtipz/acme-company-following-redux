@@ -62,9 +62,11 @@ class Companies extends Component {
         <select key={idx} value={getRating(company)} onChange={(event) => {
 
           this.state.rating = event.target.value;
-          const putRequest = axios.put(`${API}/users/${user.id}/followingCompanies/${getFollowingCompaniesId(company)}`, {rating: this.state.rating}) // update rating via putrequest
+
+          //only put request for now, will deal with post and delete later.
+          const putRequest = axios.put(`${API}/users/${user.id}/followingCompanies/${getFollowingCompaniesId(company)}`, {rating: this.state.rating}) // update rating via putrequest. 
           this.setState({ followingCompanies }); // attempt to re-render page due to changes to followingCompanies
-          
+
         }}>
           <option key={0} value='0'>0</option>
           <option key={1} value='1'>1</option>
