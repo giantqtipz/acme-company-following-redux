@@ -1,0 +1,7 @@
+html {
+    font-family: Arial;
+}
+
+.selected {
+    background-color: red
+}
